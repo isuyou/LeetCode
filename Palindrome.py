@@ -49,12 +49,10 @@ class Solution2:
         left = (self.maxCenter-self.maxRadius)//2
         right = (self.maxCenter+self.maxRadius+1)//2
         s = string[left:right]
-        return self.radii
+        return s
     
     #Manacher's algorithm shortcut so you don't need to calculate mirrored non-edge cases
     def compareCenter(self,index):
-        if index == 8:
-            print(self.data[8])
         mirror = 2 * self.center - index
         if index + self.radii[mirror] < self.center + self.radius:
             self.radii.append(self.radii[mirror])
